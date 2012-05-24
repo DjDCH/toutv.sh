@@ -8,12 +8,12 @@
 
 INPUT=$*
 
-if [[ -z $INPUT ]]
+if [ -z $INPUT ]
 	then
 	echo "Vous devez entrer un URL comme argument (e.g: toutv.sh http://www.tou.tv/virginie/SE23EP01)"
 	exit 1
 
-elif [ "$INPUT" = "http://www.tou.tv/"*]
+elif [[ "$INPUT" == http://www.tou.tv/* ]]
 	then
 		#Récupération des infos qu'on devra donner à rtmpdump
 		FILENAME="`echo $INPUT | cut -f 4,5 -d\/ | sed 's/\//\_/'`" # J'aime pas avoir à renommer mes fichiers moi-même!
